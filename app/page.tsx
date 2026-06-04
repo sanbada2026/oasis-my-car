@@ -3,21 +3,55 @@
 import Link from "next/link";
 import { ArrowRight, Shield, Users, Clock, Award } from "lucide-react";
 import ConsultationCTA from "@/components/ConsultationCTA";
+import { useState, useEffect } from "react";
+
+const heroVariants = [
+  {
+    badge: "10년 전문 직접 운영",
+    headline: (
+      <>
+        🎯 10년의 집요함, 🚘 2,000대의 선택, ▶️ 150만의 신뢰
+      </>
+    ),
+    sub: "AI도, 광고도 아닌 현장 전문가의 진심으로 찾아드립니다",
+  },
+  {
+    badge: "10년 전문 직접 운영",
+    headline: "차를 판매하지 않습니다.",
+    sub: (
+      <>
+        고객에게 가장 유리한 선택을 제안합니다.<br />
+        10년 경력 │ 누적 출고 2,000대+ │ 누적 조회수 150만+
+      </>
+    ),
+  },
+];
 
 export default function Home() {
+  const [variantIndex, setVariantIndex] = useState(0);
+
+  useEffect(() => {
+    // 페이지 로드 시 랜덤으로 0 또는 1 선택
+    const randomIndex = Math.floor(Math.random() * heroVariants.length);
+    setVariantIndex(randomIndex);
+  }, []);
+
+  const currentVariant = heroVariants[variantIndex];
+
   return (
     <div className="overflow-hidden">
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center justify-center bg-[#0F172A] text-white">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618843479313-40f8c8f0c6a9?q=80&w=2070')] bg-cover bg-center opacity-40" />
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-          <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 text-sm tracking-[2px] font-medium">10년 전문 직접 운영</div>
+          <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 text-sm tracking-[2px] font-medium">
+            {currentVariant.badge}
+          </div>
           <h1 className="text-5xl md:text-7xl font-semibold tracking-[-1.5px] leading-[1.05] mb-6">
-            화려한 광고 대신,<br /> 사람의 경험과 진심으로
+            {currentVariant.headline}
           </h1>
           <p className="max-w-2xl mx-auto text-xl md:text-2xl text-white/90 mb-10">
-            정한일 대표가 직접 만나는 오아시스 마이카.<br />
-            누적 출고 2,000대+ 신뢰, 출고 후까지 책임지는 서비스
+            {currentVariant.sub}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConsultationCTA variant="primary" size="lg" />
