@@ -10,7 +10,9 @@ const heroVariants = [
     badge: "10년 전문 직접 운영",
     headline: (
       <>
-        🎯 10년의 집요함, 🚘 2,000대의 선택, ▶️ 150만의 신뢰
+        <span className="block">🎯 10년의 집요함</span>
+        <span className="block mt-1">🚘 2,000대의 선택</span>
+        <span className="block mt-1">▶️ 150만의 신뢰</span>
       </>
     ),
     sub: "AI도, 광고도 아닌 현장 전문가의 진심으로 찾아드립니다",
@@ -47,10 +49,10 @@ export default function Home() {
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 text-sm tracking-[2px] font-medium">
             {currentVariant.badge}
           </div>
-          <h1 className="text-5xl md:text-7xl font-semibold tracking-[-1.5px] leading-[1.05] mb-6">
+          <h1 className="text-5xl md:text-[68px] font-semibold tracking-[-1.8px] leading-[1.05] mb-6 max-w-5xl mx-auto">
             {currentVariant.headline}
           </h1>
-          <p className="max-w-2xl mx-auto text-xl md:text-2xl text-white/90 mb-10">
+          <p className="max-w-3xl mx-auto text-xl md:text-2xl text-white/90 mb-10 leading-snug">
             {currentVariant.sub}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
