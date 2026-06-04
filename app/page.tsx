@@ -3,43 +3,8 @@
 import Link from "next/link";
 import { ArrowRight, Shield, Users, Clock, Award } from "lucide-react";
 import ConsultationCTA from "@/components/ConsultationCTA";
-import { useState, useEffect } from "react";
-
-const heroVariants = [
-  {
-    badge: "10년 전문 직접 운영",
-    headline: (
-      <>
-        <span className="block">🎯 10년의 집요함</span>
-        <span className="block mt-1">🚘 2,000대의 선택</span>
-        <span className="block mt-1">▶️ 150만의 신뢰</span>
-      </>
-    ),
-    sub: "AI도, 광고도 아닌 현장 전문가의 진심으로 찾아드립니다",
-  },
-  {
-    badge: "10년 전문 직접 운영",
-    headline: "차를 판매하지 않습니다.",
-    sub: (
-      <>
-        고객에게 가장 유리한 선택을 제안합니다.<br />
-        10년 경력 │ 누적 출고 2,000대+ │ 누적 조회수 150만+
-      </>
-    ),
-  },
-];
 
 export default function Home() {
-  const [variantIndex, setVariantIndex] = useState(0);
-
-  useEffect(() => {
-    // 페이지 로드 시 랜덤으로 0 또는 1 선택
-    const randomIndex = Math.floor(Math.random() * heroVariants.length);
-    setVariantIndex(randomIndex);
-  }, []);
-
-  const currentVariant = heroVariants[variantIndex];
-
   return (
     <div className="overflow-hidden">
       {/* Hero */}
@@ -47,14 +12,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618843479313-40f8c8f0c6a9?q=80&w=2070')] bg-cover bg-center opacity-40" />
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 text-sm tracking-[2px] font-medium">
-            {currentVariant.badge}
+            10년 전문 직접 운영
           </div>
-          <h1 className="text-5xl md:text-[68px] font-semibold tracking-[-1.8px] leading-[1.05] mb-6 max-w-5xl mx-auto">
-            {currentVariant.headline}
+          <h1 className="text-6xl md:text-[72px] font-semibold tracking-[-2px] leading-[1.05] mb-5 max-w-5xl mx-auto">
+            차를 판매하지 않습니다.
           </h1>
-          <p className="max-w-3xl mx-auto text-xl md:text-2xl text-white/90 mb-10 leading-snug">
-            {currentVariant.sub}
+          <p className="max-w-3xl mx-auto text-2xl md:text-3xl text-white/90 mb-6 leading-snug font-medium">
+            우리는 고객에게 가장 유리한 선택을 제안합니다.
           </p>
+          <div className="max-w-3xl mx-auto text-lg md:text-xl text-white/80 mb-10 mt-4">
+            10년 경력 │ 누적 출고 2,000대+ │ 누적 조회수 150만+
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConsultationCTA variant="primary" size="lg" />
             <Link href="/rocket" className="btn-outline border-white/70 text-white hover:bg-white hover:text-[#0F172A] px-8 py-4 rounded-2xl inline-flex items-center justify-center gap-2 text-lg">
