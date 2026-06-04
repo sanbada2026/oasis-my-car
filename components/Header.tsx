@@ -21,9 +21,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="font-semibold text-2xl tracking-[-0.5px] text-[#0F172A]">Oasis My Car</div>
-          <div className="text-[10px] text-[#C5A46E] font-medium tracking-[1px] hidden sm:block">오아시스 마이카</div>
+        <Link href="/" className="flex items-center gap-3">
+          <img 
+            src="/images/logo.svg" 
+            alt="오아시스 마이카" 
+            className="h-10 w-auto" 
+          />
+          {/* 로고가 아이콘만 포함된 경우 아래 텍스트를 추가하세요 */}
+          {/* <span className="font-semibold text-xl tracking-[-0.3px] text-[#0F172A]">오아시스 마이카</span> */}
         </Link>
 
         {/* Desktop Nav */}
