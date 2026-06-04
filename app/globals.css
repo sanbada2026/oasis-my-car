@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0F172A;
+  --gold: #C5A46E;
+  --text: #1E2937;
+  --bg: #F8FAFC;
+}
+
+body {
+  font-family: var(--font-noto-sans-kr), system-ui, sans-serif;
+}
+
+/* Luxury professional styles */
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.card {
+  @apply bg-white border border-slate-200 rounded-2xl shadow-sm transition-all duration-200;
+}
+
+.card:hover {
+  @apply shadow-md -translate-y-0.5;
+}
+
+.btn-primary {
+  @apply bg-[#C5A46E] hover:bg-[#B38A4F] text-[#0F172A] font-medium px-8 py-3 rounded-xl transition-colors;
+}
+
+.btn-outline {
+  @apply border-2 border-[#0F172A] text-[#0F172A] hover:bg-[#0F172A] hover:text-white px-8 py-3 rounded-xl transition-colors;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-semibold tracking-tight text-[#0F172A];
+}
+
+.trust-number {
+  @apply text-4xl md:text-5xl font-semibold text-[#C5A46E];
+}
+
+/* Form styles */
+.input {
+  @apply w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:border-[#C5A46E] transition-colors bg-white;
+}
+
+/* Modal */
+.modal {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4;
+}
+
+/* Responsive nav */
+.nav-link {
+  @apply text-sm font-medium text-slate-600 hover:text-[#0F172A] transition-colors relative;
+}
+
+.nav-link.active:after {
+  content: '';
+  @apply absolute -bottom-1 left-0 w-full h-0.5 bg-[#C5A46E];
+}
+
+/* Floating CTA */
+.floating-cta {
+  @apply fixed bottom-6 right-6 z-40 bg-[#C5A46E] text-[#0F172A] p-4 rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95;
+}
