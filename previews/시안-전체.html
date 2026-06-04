@@ -33,16 +33,37 @@
     .nav-link.active:after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background-color: #C5A46E; }
     .modal { animation: fadeInModal 0.2s ease-out forwards; }
     .sian-note { font-size: 10px; background: #fefce8; color: #713f12; padding: 2px 8px; border-radius: 4px; }
+    .beginner-box { background: #fef3c7; border: 3px solid #f59e0b; border-radius: 12px; padding: 15px; margin-bottom: 20px; font-size: 15px; line-height: 1.5; }
   </style>
 </head>
 <body class="bg-[#F8FAFC] text-[#1E2937]">
+
+  <!-- 초보자용 가장 중요한 안내 -->
+  <div class="beginner-box max-w-5xl mx-auto mt-4 mb-2">
+    <h1 style="font-size: 22px; margin-bottom: 8px; color: #92400e;">🌟 초등학생도 이해하는 설명 (완전 초보자용)</h1>
+    <p style="margin-bottom: 6px;"><strong>이 파일은 뭐예요?</strong><br>
+    이건 "웹사이트 미리보기"예요. 마치 그림책을 만들기 전에 먼저 그림을 그려보는 것처럼, 
+    우리가 만들 홈페이지가 어떻게 생길지 <strong>눈으로 먼저 보여주는 파일</strong>입니다.</p>
+    
+    <p style="margin-bottom: 6px;"><strong>어떻게 봐요?</strong><br>
+    1. 이 파일을 <strong>다운로드</strong>하세요 (아래에 방법 있음)<br>
+    2. 다운로드한 파일을 <strong>더블클릭</strong>하세요<br>
+    3. 크롬이나 엣지 같은 인터넷 브라우저가 열리면서 예쁜 홈페이지가 나와요!</p>
+
+    <p><strong>진짜 웹사이트랑 뭐가 달라요?</strong><br>
+    이건 "그림"이에요. 진짜 웹사이트는 나중에 인터넷에 올려서 누구나 볼 수 있게 만들 거예요. 
+    지금은 디자인(모양새)만 먼저 확인하는 단계예요.</p>
+
+    <p style="color: #b45309; font-weight: 600;">👉 지금 이 페이지 위쪽에 있는 노란 박스도 읽어보세요!</p>
+  </div>
+
   <!-- Top Note -->
-  <div class="bg-yellow-100 text-yellow-800 text-center py-1.5 text-xs font-medium">
-    👁️ <strong>시안 (HTML 모크업)</strong> — 사실 Next.js 코드와 정확히 일치하는 정적 프리뷰. 다운로드 후 브라우저에서 열어 보세요. 상호작용은 시뮬레이션됩니다.
+  <div class="bg-yellow-100 text-yellow-800 text-center py-1.5 text-xs font-medium max-w-5xl mx-auto">
+    👁️ <strong>시안 (HTML 모크업)</strong> — 실제 Next.js 코드와 정확히 일치하는 정적 프리뷰. 다운로드 후 브라우저에서 열어 보세요. 상호작용은 시뮬레이션됩니다.
   </div>
 
   <!-- Header / Nav -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b max-w-7xl mx-auto">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <div class="flex items-center gap-2">
         <div class="font-semibold text-2xl tracking-[-0.5px] text-[#0F172A]">Oasis My Car</div>
@@ -72,7 +93,7 @@
     </div>
 
     <!-- Mobile Nav -->
-    <div id="mobile-nav" class="hidden md:hidden border-t bg-white px-6 py-4 text-base space-y-2">
+    <div id="mobile-nav" class="hidden md:hidden border-t bg-white px-6 py-4 text-base space-y-2 max-w-7xl mx-auto">
       <a href="#about" class="block py-1" onclick="toggleMobileNav()">1. 회사 소개</a>
       <a href="#special" class="block py-1" onclick="toggleMobileNav()">2. 특가 조건</a>
       <a href="#rocket" class="block py-1" onclick="toggleMobileNav()">3. 로켓출고 차량</a>
@@ -144,7 +165,7 @@
       <div class="card p-8">
         <div class="w-12 h-12 rounded-xl bg-[#C5A46E]/10 flex items-center justify-center mb-6"><i class="fa-solid fa-user-tie text-[#C5A46E] text-xl"></i></div>
         <h3 class="text-2xl font-semibold mb-4 text-[#0F172A]">현장 전문가 직접 상담</h3>
-        <p class="text-slate-600 leading-relaxed">10년 경력의 정한일 대표가 고객 한 분 한 분을 직접 만낙니다. 기계적 AI 견적이 아닙니다.</p>
+        <p class="text-slate-600 leading-relaxed">10년 경력의 정한일 대표가 고객 한 분 한 분을 직접 만낙습니다. 기계적 AI 견적이 아닙니다.</p>
       </div>
       <div class="card p-8">
         <div class="w-12 h-12 rounded-xl bg-[#C5A46E]/10 flex items-center justify-center mb-6"><i class="fa-solid fa-handshake text-[#C5A46E] text-xl"></i></div>
@@ -490,7 +511,6 @@
       setTimeout(() => {
         alert('시안에서는 실제 제출되지 않습니다.\n사실 사이트에서는 성공 토스트가 나타나고 10분 내 연락을 받습니다.');
         hideConsultModal();
-        // reset form if needed
         if (e.target) e.target.reset();
       }, 800);
     }
@@ -514,7 +534,7 @@
       });
     });
 
-    console.log('%c[시안 HTML] 오아시스 마이카 시안 로드 완료. 정확한 코드 반영번.', 'color:#64748b');
+    console.log('%c[시안 HTML] 오아시스 마이카 시안 로드 완료. 초보자도 쉽게 볼 수 있게 만들었어요!', 'color:#64748b');
   </script>
 </body>
 </html>
