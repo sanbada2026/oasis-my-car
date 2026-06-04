@@ -5,7 +5,13 @@ export default function Footer() {
     <footer className="bg-[#0F172A] text-white/80 pt-14 pb-10 text-sm">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-10">
         <div className="md:col-span-5">
-          <div className="font-semibold text-2xl text-white tracking-tight mb-2">Oasis My Car</div>
+          <div className="flex items-center gap-3 mb-2">
+            <img 
+              src="/images/logo.svg" 
+              alt="오아시스 마이카" 
+              className="h-9 w-auto" 
+            />
+          </div>
           <div className="text-white/60">10년 전문가의 진심 상담</div>
           <div className="mt-6 text-xs leading-relaxed text-white/50 max-w-xs">
             오아시스 마이카는 10년 이상 장기렌트 · 오토리스 현장 전문가가 직접 운영하는 전문 기업입니다.<br />
