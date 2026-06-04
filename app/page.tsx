@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, Shield, Users, Clock, Award } from "lucide-react";
-import ConsultationCTA from "./components/ConsultationCTA";
+import ConsultationCTA from "@/components/ConsultationCTA";
 
 export default function Home() {
   return (
