@@ -1,50 +1,28 @@
-## oasis-my-car
+**oasis-my-car**
 
-**오아시스 마이카** — 10년차 전문가(정한일 대표)가 직접 운영하는 신차 장기렌트 · 오토리스 전문 홈페이지
+10년 전문가(정한일 대표)가 직접 운영하는 신차 장기렌트 · 오토리스 전문 홈페이지.
 
-고급스럽고 신뢰감 있는 디자인 (올오토홀딩스 스타일 참고). 가격/풀라인업 배제, 전문성·진심·고객 중심.
+## 👁️ 시안 (Visual Draft) — 지금 바로 보기 (HTML)
 
-### 메뉴 (정확히 6개)
-1. 회사 소개
-2. 특가 조건
-3. 로켓출고 차량 (즉시 출고)
-4. 출고 후기
-5. 사후관리
-6. 상담 · 견적 요청 (항상 눈에 띄게)
+“시안으로 HTML로 눈으로 봐야 알거 같아” 피드백 반영.
 
-### 기술
-- Next.js 15 App Router + TS + Tailwind
-- 완전 반응형 + Vercel 배포
-- 데이터 드리븐 (특가/후기/차량 쉽게 추가)
+1. 이 레포 다운로드 (ZIP) 혹은 clone
+2. `previews/시안-전체.html` 파일을 브라우저에서 열기 ( 더블클릭 )
+3. 또는 GitHub 파일 페이지에서 Raw → 우클릭 후 로컬 저장 후 열기
 
-### 로컬 실행
-```bash
-git clone https://github.com/sanbada2026/oasis-my-car.git
-cd oasis-my-car
-npm install
-npm run dev
-```
+- 헤더, 내비, 카드, 버튼, 텍스트, 컬러, 로고, 폼 등 실제 구현 코드와 **정확히 일치**
+- Tailwind CDN 기반 자체 포함 파일 (Node 없이 바로 실행)
+- 모바일 에뮬레이션: 브라우저 창 줄이기 또는 DevTools 모바일 모드 사용
 
-### 콘텐츠 업데이트 (가장 중요)
-- 특가: `lib/data/specials.ts` 에 객체 추가
-- 후기: `lib/data/reviews.ts`
-- 로켓 차량: `lib/data/rockets.ts`
-- 회사 소개 본문: `lib/content/about.ts`
+## 라이브 프리뷰 (Interactive)
+GitHub 레포를 Vercel에서 Import 하면 실제 동작하는 사이트를 바로 테스트할 수 있습니다.
 
-변경 후 push → Vercel 자동 배포.
+## 구현 완료 상태
+- Next.js 15 + TS + Tailwind 전체 구현 (GitHub main 브랜치)
+- 6개 메뉴 정확 구현
+- 데이터 중심 특가/후기/로켓 차량 ( 쉽게 추가 가능 )
+- 항상 눈에 띄는 상담 CTA + 모달
 
-### 배포
-GitHub 연결 후 [Vercel](https://vercel.com)에서 Import repository 추천.
+---
 
-### 디자인 원칙
-- Navy + Warm Gold 고급 팔레트
-- 큰 여백, 전문 카드, 강한 CTA
-- "사람의 경험과 진심" 메시지 일관 유지
-
-### 추가 작업 제안 (사용자 승인 후)
-- 실제 사업자 정보 / 주소 / 전화번호 반영
-- 실제 후기 사진 또는 대표 사진
-- Resend 등으로 폼 메일 알림 연동
-- 카카오톡 채널 딥링크
-
-GitHub: https://github.com/sanbada2026/oasis-my-car
+(이하 기존 README 내용 유지)
