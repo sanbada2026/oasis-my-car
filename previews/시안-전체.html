@@ -34,9 +34,7 @@
     .filter-pill { font-size: 12px; padding: 4px 10px; border-radius: 9999px; border: 1px solid #e2e8f0; background: white; transition: all .1s; }
     .filter-pill.active { background: #0F172A; color: white; border-color: #0F172A; }
     .rocket-card { border: 1px solid #e2e8f0; border-radius: 0.75rem; overflow: hidden; background: white; transition: box-shadow .2s, border .2s; }
-    .rocket-card:hover { border-color: #C5A46E; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
     .rocket-photo { height: 92px; background: #f1f5f9; position: relative; border-bottom: 1px solid #f1f5f9; }
-    .est-large { font-size: 21px; line-height: 1.1; font-weight: 700; color: #0F172A; }
   </style>
 </head>
 <body class="bg-[#F8FAFC] text-[#1E2937]">
@@ -62,7 +60,6 @@
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b max-w-7xl mx-auto">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3">
-        <!-- 로고 이미지 + robust text fallback -->
         <img 
           src="/images/logo.svg" 
           alt="오아시스 마이카 로고" 
@@ -72,13 +69,12 @@
         <span class="font-semibold text-xl tracking-[-0.3px] text-[#0F172A]">오아시스 마이카</span>
       </a>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-x-8 text-sm" id="desktop-nav">
         <a href="#about" class="nav-link">1. 회사 소개</a>
         <a href="#special" class="nav-link">2. 특가 조건</a>
         <a href="#rocket" class="nav-link">3. 로켓출고 차량</a>
         <a href="#reviews" class="nav-link">4. 출고 후기</a>
-        <a href="#aftercare" class="nav-link">5. 사후관리</a>
+        <a href="#lowcredit" class="nav-link">5. 저신용렌트</a>
       </nav>
 
       <div class="hidden md:flex items-center gap-3">
@@ -88,19 +84,17 @@
         <button onclick="showConsultModal()" class="bg-[#C5A46E] text-[#0F172A] px-6 py-2.5 text-sm rounded-2xl font-medium hover:bg-[#B38A4F] transition-all">상담 요청</button>
       </div>
 
-      <!-- Mobile Hamburger -->
       <button onclick="toggleMobileNav()" class="md:hidden p-2 text-xl">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
 
-    <!-- Mobile Nav -->
     <div id="mobile-nav" class="hidden md:hidden border-t bg-white px-6 py-4 text-base space-y-2 max-w-7xl mx-auto">
       <a href="#about" class="block py-1" onclick="toggleMobileNav()">1. 회사 소개</a>
       <a href="#special" class="block py-1" onclick="toggleMobileNav()">2. 특가 조건</a>
       <a href="#rocket" class="block py-1" onclick="toggleMobileNav()">3. 로켓출고 차량</a>
       <a href="#reviews" class="block py-1" onclick="toggleMobileNav()">4. 출고 후기</a>
-      <a href="#aftercare" class="block py-1" onclick="toggleMobileNav()">5. 사후관리</a>
+      <a href="#lowcredit" class="block py-1" onclick="toggleMobileNav()">5. 저신용렌트</a>
       <div class="pt-3 border-t">
         <a href="tel:1599-1496" class="block py-2 font-medium text-[#0F172A]">1599-1496 전화 상담</a>
         <button onclick="showConsultModal();toggleMobileNav()" class="mt-1 w-full bg-[#C5A46E] text-[#0F172A] py-2.5 rounded-2xl font-medium">상담 요청</button>
@@ -108,7 +102,7 @@
     </div>
   </header>
 
-  <!-- HERO (Home) - ensure 우리는 고객에게 prominent -->
+  <!-- HERO -->
   <section id="home" class="hero-bg relative min-h-[92vh] flex items-center justify-center text-white">
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
       <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 text-sm tracking-[2px] font-medium">
@@ -161,7 +155,7 @@
     </div>
   </section>
 
-  <!-- Differentiation (updated first card exact text, remove rep name) -->
+  <!-- Differentiation -->
   <section class="max-w-6xl mx-auto px-6 py-20">
     <div class="text-center mb-12">
       <div class="text-[#C5A46E] text-sm tracking-[3px] font-medium mb-3">오아시스 마이카만의 차별점</div>
@@ -212,15 +206,15 @@
           <div><div class="font-semibold text-xl group-hover:text-[#C5A46E] transition-colors">4. 출고 후기</div><div class="text-sm text-slate-500 mt-1">2,000대+ 실제 후기</div></div>
           <i class="fa-solid fa-arrow-right mt-4 text-[#C5A46E]"></i>
         </a>
-        <a href="#aftercare" class="group card p-6 flex flex-col justify-between min-h-[140px] hover:border-[#C5A46E]">
-          <div><div class="font-semibold text-xl group-hover:text-[#C5A46E] transition-colors">5. 사후관리</div><div class="text-sm text-slate-500 mt-1">출고 후까지 책임</div></div>
+        <a href="#lowcredit" class="group card p-6 flex flex-col justify-between min-h-[140px] hover:border-[#C5A46E]">
+          <div><div class="font-semibold text-xl group-hover:text-[#C5A46E] transition-colors">5. 저신용렌트</div><div class="text-sm text-slate-500 mt-1">저신용자 특화 재고</div></div>
           <i class="fa-solid fa-arrow-right mt-4 text-[#C5A46E]"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 1. 회사 소개 (unchanged core) -->
+  <!-- 1. 회사 소개 -->
   <section id="about" class="max-w-5xl mx-auto px-6 py-16 scroll-mt-20">
     <div class="bg-[#0F172A] text-white py-12 -mx-6 px-6 mb-12 rounded-3xl">
       <div class="max-w-3xl mx-auto text-center">
@@ -278,7 +272,7 @@
     </div>
   </section>
 
-  <!-- 2. 특가 조건 -> 오늘의 프로모션 차량 (ALL corrections) -->
+  <!-- 2. 특가 조건 -->
   <section id="special" class="max-w-6xl mx-auto px-6 py-16 border-t scroll-mt-20">
     <div class="max-w-2xl mb-6">
       <div class="text-[#C5A46E] text-xs tracking-widest">TODAY'S PROMO</div>
@@ -292,7 +286,6 @@
       <p class="mt-2 text-sm font-medium">추천: <span class="text-[#C5A46E]">디올뉴그랜저HEV 캘리그래피 월 65만원</span> — 재고 특가 한정</p>
     </div>
 
-    <!-- 8 promo cards like new data shape -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
       <div class="card p-4 text-sm"><div class="font-semibold">디올뉴그랜저HEV 캘리그래피</div><div class="text-[#C5A46E] font-bold mt-1">월 65만원</div><div class="text-[10px] text-slate-500">프로모션 · 재고할인 적용</div><button onclick="showConsultModalWithPrefill('디올뉴그랜저HEV 캘리그래피')" class="mt-3 text-xs btn-outline w-full py-1.5">상담 요청</button></div>
       <div class="card p-4 text-sm"><div class="font-semibold">2025 싼타페 하이브리드 캘리그래피</div><div class="text-[#C5A46E] font-bold mt-1">월 58만원</div><div class="text-[10px] text-slate-500">재고특가 · 즉시 출고 가능</div><button onclick="showConsultModalWithPrefill('2025 싼타페 하이브리드 캘리그래피')" class="mt-3 text-xs btn-outline w-full py-1.5">상담 요청</button></div>
@@ -306,7 +299,7 @@
     </div>
   </section>
 
-  <!-- 3. 로켓출고 (NEW high-volume premium scannable UI) -->
+  <!-- 3. 로켓출고 (sort removed, brand/fuel kept) -->
   <section id="rocket" class="max-w-6xl mx-auto px-6 py-16 border-t scroll-mt-20">
     <div class="mb-6">
       <div class="text-[#C5A46E] text-xs tracking-widest">ROCKET DELIVERY</div>
@@ -314,14 +307,11 @@
       <p class="text-slate-600 mt-1">즉시 또는 빠른 출고가 가능한 차량들입니다. 재고 상황은 실시간 변동되니 상담으로 확인해 주세요.</p>
     </div>
 
-    <!-- Top toolbar with live filters/search -->
     <div class="bg-white border rounded-2xl p-4 mb-6 shadow-sm">
       <div class="flex flex-col md:flex-row gap-3">
-        <!-- Search -->
         <input id="r-search" type="text" placeholder="모델 또는 브랜드 검색 (예: 그랜저)" 
                class="flex-1 border rounded-xl px-4 py-2 text-sm focus:border-[#C5A46E]" oninput="filterRockets()">
 
-        <!-- 브랜드 pills -->
         <div class="flex items-center gap-1 text-xs flex-wrap">
           <span class="px-2 text-slate-500">브랜드</span>
           <button onclick="setRocketFilter('brand','전체')" class="filter-pill active" data-brand="전체">전체</button>
@@ -329,7 +319,6 @@
           <button onclick="setRocketFilter('brand','기아')" class="filter-pill" data-brand="기아">기아</button>
         </div>
 
-        <!-- 차종 -->
         <div class="flex items-center gap-1 text-xs flex-wrap">
           <span class="px-2 text-slate-500">차종</span>
           <button onclick="setRocketFilter('category','전체')" class="filter-pill active" data-category="전체">전체</button>
@@ -338,7 +327,6 @@
           <button onclick="setRocketFilter('category','MPV')" class="filter-pill" data-category="MPV">MPV</button>
         </div>
 
-        <!-- 연료 -->
         <div class="flex items-center gap-1 text-xs flex-wrap">
           <span class="px-2 text-slate-500">연료</span>
           <button onclick="setRocketFilter('fuel','전체')" class="filter-pill active" data-fuel="전체">전체</button>
@@ -347,29 +335,19 @@
           <button onclick="setRocketFilter('fuel','가솔린')" class="filter-pill" data-fuel="가솔린">가솔린</button>
           <button onclick="setRocketFilter('fuel','전기')" class="filter-pill" data-fuel="전기">전기</button>
         </div>
-
-        <!-- Sort -->
-        <select id="r-sort" onchange="filterRockets()" class="border rounded-xl px-3 py-2 text-sm">
-          <option value="출고빠른순">출고빠른순</option>
-          <option value="재고많은순">재고많은순</option>
-          <option value="월비용낮은순">월비용낮은순</option>
-        </select>
       </div>
     </div>
 
-    <!-- Main: Responsive grid compact cards -->
     <div id="rocket-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-      <!-- Populated by JS from data below -->
     </div>
 
-    <!-- Footer of section -->
     <div id="rocket-footer" class="mt-8 pt-4 border-t text-xs text-slate-500">
-      현재 <span id="r-showing" class="font-medium text-[#0F172A]">16</span>대 표시 중 / 전체 <span id="r-total">16</span>대 (현대·기아 엑셀 매일 업데이트 기반 엄선. 실제 재고·조건은 1:1 상담으로 확인)
+      현재 <span id="r-showing" class="font-medium text-[#0F172A]">16</span>대 표시 중 / 전체 <span id="r-total">16</span>대 (현대·기아 엑셀 매일 업데이트 기반 엄선. 실제 재고·조건은 상담으로 확인)
       <div class="mt-0.5 text-[10px]">엑셀 업로드 시 curate 하여 이 파일만 업데이트</div>
     </div>
   </section>
 
-  <!-- 4. 출고 후기 (photo left or top + 7 structured fields as dl) -->
+  <!-- 4. 출고 후기 -->
   <section id="reviews" class="max-w-6xl mx-auto px-6 py-16 border-t scroll-mt-20">
     <div class="mb-8">
       <div class="text-[#C5A46E] text-xs tracking-[3px]">REAL VOICES</div>
@@ -378,7 +356,6 @@
     </div>
 
     <div class="grid md:grid-cols-2 gap-5">
-      <!-- Review 1 with photo top/left + dl -->
       <div class="card p-5 flex gap-4">
         <img src="https://picsum.photos/id/29/120/120" class="w-20 h-20 rounded object-cover flex-shrink-0" alt="고객 사진">
         <div class="flex-1 text-sm">
@@ -407,7 +384,6 @@
           </dl>
         </div>
       </div>
-      <!-- more reviews abbreviated for space, same structure -->
       <div class="card p-5 flex gap-4">
         <img src="https://picsum.photos/id/40/120/120" class="w-20 h-20 rounded object-cover flex-shrink-0" alt="">
         <div class="flex-1 text-sm"><dl class="space-y-0.5 text-xs"><div class="flex"><dt class="w-16 text-slate-500">모델</dt><dd class="font-medium">기아 쏘렌토 하이브리드</dd></div><div class="flex"><dt class="w-16 text-slate-500">연령대</dt><dd>30대 후반</dd></div><div class="flex"><dt class="w-16 text-slate-500">용도</dt><dd>업무용</dd></div><div class="flex"><dt class="w-16 text-slate-500">선택이유</dt><dd class="text-slate-600">업무로 지방 출장이 잦아서...</dd></div><div class="flex"><dt class="w-16 text-slate-500">걱정점</dt><dd class="text-slate-600">업무 차량이라 고장...</dd></div><div class="flex"><dt class="w-16 text-slate-500">최고기억</dt><dd class="text-slate-600">출고 1주일 만에...</dd></div><div class="flex"><dt class="w-16 text-slate-500">후기한마디</dt><dd class="text-slate-600">문제 생겼을 때 바로 대응...</dd></div></dl></div>
@@ -419,23 +395,42 @@
     </div>
   </section>
 
-  <!-- 5. 사후관리 (kept) -->
-  <section id="aftercare" class="max-w-5xl mx-auto px-6 py-16 border-t scroll-mt-20">
-    <div>
-      <div class="text-[#C5A46E] text-xs tracking-widest">AFTER DELIVERY</div>
-      <h2 class="section-title">출고가 끝이 아닙니다</h2>
-      <p class="mt-2 text-xl text-slate-600">출고 후도 계약 만기까지, 그리고 다음 차까지 함께합니다.</p>
+  <!-- 5. 저신용렌트 (replaced aftercare, Excel upload ready) -->
+  <section id="lowcredit" class="max-w-6xl mx-auto px-6 py-16 border-t scroll-mt-20">
+    <div class="mb-6">
+      <div class="text-[#C5A46E] text-xs tracking-widest">LOW CREDIT LEASE</div>
+      <h2 class="section-title">5. 저신용렌트</h2>
+      <p class="text-slate-600 mt-1">저신용자도 이용 가능한 신차/중고차 특화 상품입니다. 매일 업데이트되는 재고를 확인하세요.</p>
+      <p class="text-xs text-slate-500 mt-1">※ 매일 엑셀 재고 파일(신차/중고)에서 데이터를 복사해서 JS 배열에 붙여넣으세요. (이 파일만 수정하면 반영)</p>
     </div>
-    <div class="mt-10 space-y-6">
-      <div class="flex gap-5 border-l-4 border-[#C5A46E] pl-6"><div class="font-mono text-2xl text-[#C5A46E] w-12">01</div><div><div class="font-semibold text-xl">계약 후 안내</div><div class="text-slate-600">서류, 보험, 하이패스 등 기본 설정 안내</div></div></div>
-      <div class="flex gap-5 border-l-4 border-[#C5A46E] pl-6"><div class="font-mono text-2xl text-[#C5A46E] w-12">02</div><div><div class="font-semibold text-xl">출고 기념 패키지</div><div class="text-slate-600">전문 검수 및 고급 시공 옵션 적용</div></div></div>
-      <div class="flex gap-5 border-l-4 border-[#C5A46E] pl-6"><div class="font-mono text-2xl text-[#C5A46E] w-12">03</div><div><div class="font-semibold text-xl">정기 안부 및 점검</div><div class="text-slate-600">주기적 안부 연락 및 유지비 조언</div></div></div>
-      <div class="flex gap-5 border-l-4 border-[#C5A46E] pl-6"><div class="font-mono text-2xl text-[#C5A46E] w-12">04</div><div><div class="font-semibold text-xl">이슈 발생 시 즉시 대응</div><div class="text-slate-600">24시간 연락처 운영, 대표 직접 확인</div></div></div>
-      <div class="flex gap-5 border-l-4 border-[#C5A46E] pl-6"><div class="font-mono text-2xl text-[#C5A46E] w-12">05</div><div><div class="font-semibold text-xl">만기 / 재계약 지원</div><div class="text-slate-600">차량 반환, 인수, 재계약 우대 안내</div></div></div>
+
+    <div class="bg-white border rounded-2xl p-4 mb-6 shadow-sm">
+      <div class="flex flex-col md:flex-row gap-3">
+        <input id="lc-search" type="text" placeholder="모델 검색 (예: 그랜저)" class="flex-1 border rounded-xl px-4 py-2 text-sm focus:border-[#C5A46E]" oninput="filterLowcredit()">
+
+        <div class="flex items-center gap-1 text-xs flex-wrap">
+          <span class="px-2 text-slate-500">브랜드</span>
+          <button onclick="setLowcreditFilter('brand','전체')" class="filter-pill active" data-lcbrand="전체">전체</button>
+          <button onclick="setLowcreditFilter('brand','현대')" class="filter-pill" data-lcbrand="현대">현대</button>
+          <button onclick="setLowcreditFilter('brand','기아')" class="filter-pill" data-lcbrand="기아">기아</button>
+        </div>
+
+        <div class="flex items-center gap-1 text-xs flex-wrap">
+          <span class="px-2 text-slate-500">구분</span>
+          <button onclick="setLowcreditFilter('type','전체')" class="filter-pill active" data-lctype="전체">전체</button>
+          <button onclick="setLowcreditFilter('type','신차')" class="filter-pill" data-lctype="신차">신차</button>
+          <button onclick="setLowcreditFilter('type','중고')" class="filter-pill" data-lctype="중고">중고</button>
+        </div>
+      </div>
     </div>
+
+    <div id="lowcredit-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    </div>
+
+    <div class="mt-6 text-xs text-slate-500">재고는 실시간 변동됩니다. 정확한 조건은 상담 후 확인하세요.</div>
   </section>
 
-  <!-- 6. 상담 요청 (Contact) renamed, removed email/sahumanagement/direct meeting, added kakao -->
+  <!-- 6. 상담 요청 -->
   <section id="contact" class="max-w-5xl mx-auto px-6 py-16 border-t scroll-mt-20">
     <div class="grid md:grid-cols-5 gap-8">
       <div class="md:col-span-2">
@@ -447,7 +442,6 @@
             <a href="tel:1599-1496" class="text-2xl font-semibold text-[#0F172A] flex items-center gap-2 mt-0.5"><i class="fa-solid fa-phone"></i> 1599-1496</a>
           </div>
           <div>
-            <!-- KakaoTalk link with inline SVG yellow logo -->
             <a href="https://pf.kakao.com/_oasismycar" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-1 text-[#FEE500] hover:underline font-medium">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#FEE500" xmlns="http://www.w3.org/2000/svg"><path d="M12 3C6.48 3 2 6.7 2 11.3c0 2.9 1.9 5.4 4.7 6.9l-1.2 4.3c-.1.4.3.7.7.5l4.8-3.1c.3 0 .6.1.9.1 5.5 0 10-3.7 10-8.2S17.5 3 12 3z"/></svg>
               카카오톡 상담
@@ -457,14 +451,13 @@
         </div>
       </div>
 
-      <!-- Form (no email field, simplified) -->
       <div class="md:col-span-3 bg-white border rounded-3xl p-7">
         <form onsubmit="fakeSubmit(event)">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
             <input type="text" placeholder="성함" class="input" required>
             <input type="tel" placeholder="휴대폰 번호" class="input" required>
           </div>
-          <select class="input mb-4 w-full"><option>상담 분야 선택 (선택)</option><option>특가 조건</option><option>로켓출고 차량</option><option>일반 상담</option><option>사후관리</option></select>
+          <select class="input mb-4 w-full"><option>상담 분야 선택 (선택)</option><option>특가 조건</option><option>로켓출고 차량</option><option>일반 상담</option><option>저신용렌트</option></select>
           <textarea rows="3" placeholder="상담 내용 (예산, 기간, 용도 등)" class="input w-full mb-4"></textarea>
           <label class="flex items-center gap-2 text-xs mb-4"><input type="checkbox" checked> 개인정보 수집 및 이용에 동의합니다.</label>
           <button type="submit" class="w-full btn-primary py-3">상담 요청하기</button>
@@ -474,7 +467,7 @@
     </div>
   </section>
 
-  <!-- Footer (updated bottom) -->
+  <!-- Footer -->
   <footer class="bg-[#0F172A] text-white/70 pt-10 pb-8 text-sm mt-10">
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-y-8">
       <div class="md:col-span-5">
@@ -491,7 +484,7 @@
           <a href="#special" class="block hover:text-white">2. 특가 조건</a>
           <a href="#rocket" class="block hover:text-white">3. 로켓출고 차량</a>
           <a href="#reviews" class="block hover:text-white">4. 출고 후기</a>
-          <a href="#aftercare" class="block hover:text-white">5. 사후관리</a>
+          <a href="#lowcredit" class="block hover:text-white">5. 저신용렌트</a>
         </div>
       </div>
       <div class="md:col-span-4 text-xs">
@@ -506,7 +499,6 @@
     </div>
   </footer>
 
-  <!-- Consultation Modal (updated, supports prefill) -->
   <div id="modal" onclick="hideConsultModal()" class="hidden fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4">
     <div onclick="event.stopImmediatePropagation()" class="w-full max-w-md bg-white rounded-3xl overflow-hidden shadow-2xl">
       <div class="px-6 py-4 border-b flex justify-between items-center">
@@ -530,10 +522,10 @@
   </div>
 
   <script>
-    // Tailwind + data for rocket (self contained, high volume sim 16 items)
     function tailwindInit() { document.documentElement.style.setProperty('--accent', '#C5A46E'); }
     tailwindInit();
 
+    // 로켓 데이터 (sort removed)
     const ROCKET_DATA = [
       {id:"rkt-001",model:"디올뉴그랜저 HEV 캘리그래피",brand:"현대",category:"세단",fuelType:"하이브리드",estMonthly:"월 62만원",deliveryDays:"1~2일",stock:3,imagePlaceholder:"https://picsum.photos/id/1015/400/300",note:"예상 월 62만원 · 상담 후 확정"},
       {id:"rkt-002",model:"기아 K8 하이브리드 노블레스",brand:"기아",category:"세단",fuelType:"하이브리드",estMonthly:"월 51만원",deliveryDays:"즉시",stock:5,imagePlaceholder:"https://picsum.photos/id/133/400/300",note:"예상 월 51만원 · 인기 세단"},
@@ -557,7 +549,6 @@
 
     function setRocketFilter(type, val) {
       currentFilters[type] = val;
-      // update active pills
       document.querySelectorAll(`[data-${type}]`).forEach(el => {
         el.classList.toggle('active', el.dataset[type] === val);
       });
@@ -566,7 +557,6 @@
 
     function filterRockets() {
       const q = (document.getElementById('r-search').value || '').toLowerCase().trim();
-      const sortVal = document.getElementById('r-sort').value;
       let list = ROCKET_DATA.filter(v => {
         if (currentFilters.brand !== '전체' && v.brand !== currentFilters.brand) return false;
         if (currentFilters.category !== '전체' && v.category !== currentFilters.category) return false;
@@ -574,17 +564,6 @@
         if (q && !v.model.toLowerCase().includes(q) && !v.brand.toLowerCase().includes(q)) return false;
         return true;
       });
-
-      // sort
-      if (sortVal === '출고빠른순') {
-        const dayScore = d => d.includes('즉시') ? 0 : (parseInt((d.match(/\d+/)||[99])[0],10));
-        list.sort((a,b)=> dayScore(a.deliveryDays) - dayScore(b.deliveryDays));
-      } else if (sortVal === '재고많은순') {
-        list.sort((a,b)=> b.stock - a.stock);
-      } else if (sortVal === '월비용낮은순') {
-        const getC = m => m ? parseInt(m.match(/\d+/)[0],10) : 999;
-        list.sort((a,b)=> getC(a.estMonthly) - getC(b.estMonthly));
-      }
 
       renderRocketGrid(list);
       document.getElementById('r-showing').textContent = list.length;
@@ -618,21 +597,76 @@
       });
     }
 
+    // 저신용렌트 데이터 (Excel upload ready)
+    const LOWCREDIT_DATA = [
+      {id:"lc-001", model:"현대 그랜저 2023", type:"신차", price:"월 42만원", stock:4, note:"저신용 협의 가능, 보증금 0~10%"},
+      {id:"lc-002", model:"기아 K8 2022 중고", type:"중고", price:"월 35만원", stock:6, note:"저신용 승인율 높음"},
+      {id:"lc-003", model:"현대 아반떼 2024", type:"신차", price:"월 28만원", stock:8, note:"신용 5등급 이하 가능"},
+      {id:"lc-004", model:"기아 쏘렌토 2021 중고", type:"중고", price:"월 32만원", stock:3, note:"재고 한정, 빠른 출고"},
+      {id:"lc-005", model:"현대 투싼 2023", type:"신차", price:"월 31만원", stock:5, note:"저신용 전용 프로모션"},
+      {id:"lc-006", model:"기아 카니발 2022 중고", type:"중고", price:"월 38만원", stock:2, note:"가족용 저신용 추천"},
+      {id:"lc-007", model:"현대 팰리세이드 2024", type:"신차", price:"월 48만원", stock:1, note:"저신용 별도 심사"},
+      {id:"lc-008", model:"기아 K5 2023 중고", type:"중고", price:"월 26만원", stock:7, note:"신용 회복 지원 상품"},
+    ];
+
+    let lcFilters = { brand: '전체', type: '전체' };
+
+    function setLowcreditFilter(type, val) {
+      lcFilters[type] = val;
+      document.querySelectorAll(`[data-lc${type}]`).forEach(el => el.classList.toggle('active', el.dataset[`lc${type}`] === val));
+      filterLowcredit();
+    }
+
+    function filterLowcredit() {
+      const q = (document.getElementById('lc-search').value || '').toLowerCase().trim();
+      let list = LOWCREDIT_DATA.filter(v => {
+        if (lcFilters.brand !== '전체' && !v.model.includes(lcFilters.brand)) return false;
+        if (lcFilters.type !== '전체' && v.type !== lcFilters.type) return false;
+        if (q && !v.model.toLowerCase().includes(q)) return false;
+        return true;
+      });
+      renderLowcreditGrid(list);
+    }
+
+    function renderLowcreditGrid(list) {
+      const grid = document.getElementById('lowcredit-grid');
+      grid.innerHTML = '';
+      list.forEach(v => {
+        const div = document.createElement('div');
+        div.className = 'card p-4';
+        div.innerHTML = `
+          <div class="flex justify-between">
+            <div class="font-semibold">${v.model}</div>
+            <span class="text-xs px-2 py-0.5 rounded ${v.type==='신차' ? 'bg-blue-100 text-blue-700' : 'bg-amber-100 text-amber-700'}">${v.type}</span>
+          </div>
+          <div class="text-2xl font-bold text-[#0F172A] mt-1">${v.price}</div>
+          <div class="text-xs text-slate-500 mt-1">재고 ${v.stock}대</div>
+          <div class="text-xs text-slate-600 mt-2">${v.note}</div>
+          <button onclick="showConsultModalWithPrefill('${v.model.replace(/'/g,"\\'")}' )" class="mt-3 btn-outline w-full text-xs py-1.5">상담 요청</button>
+        `;
+        grid.appendChild(div);
+      });
+    }
+
     function initRocket() {
-      // initial pills active
       document.querySelectorAll('[data-brand="전체"]').forEach(el=>el.classList.add('active'));
       document.querySelectorAll('[data-category="전체"]').forEach(el=>el.classList.add('active'));
       document.querySelectorAll('[data-fuel="전체"]').forEach(el=>el.classList.add('active'));
-
       const grid = document.getElementById('rocket-grid');
       if (grid) {
         renderRocketGrid(ROCKET_DATA);
         document.getElementById('r-showing').textContent = ROCKET_DATA.length;
         document.getElementById('r-total').textContent = ROCKET_DATA.length;
       }
-      // bind sort change
-      const sortEl = document.getElementById('r-sort');
-      if (sortEl) sortEl.onchange = filterRockets;
+    }
+
+    function initLowcredit() {
+      document.querySelectorAll('[data-lcbrand="전체"]').forEach(el=>el.classList.add('active'));
+      document.querySelectorAll('[data-lctype="전체"]').forEach(el=>el.classList.add('active'));
+      const grid = document.getElementById('lowcredit-grid');
+      if (grid) {
+        renderLowcreditGrid(LOWCREDIT_DATA);
+      }
     }
 
     function toggleMobileNav() {
@@ -679,7 +713,6 @@
       }, 800);
     }
 
-    // Keyboard escape
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         const modal = document.getElementById('modal');
@@ -687,7 +720,6 @@
       }
     });
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -698,14 +730,14 @@
       });
     });
 
-    // Init everything
     window.onload = function() {
       initRocket();
-      console.log('%c[시안 HTML] 모든 수정(8가지 + 로켓 고볼륨 UI + 상담 요청) 적용 완료', 'color:#64748b');
+      initLowcredit();
+      console.log('%c[시안 HTML] 로켓 sort 제거 + 저신용렌트 탭으로 변경 + Excel 세팅 완료', 'color:#64748b');
     };
 
-    // expose for debug
     window.filterRockets = filterRockets;
+    window.filterLowcredit = filterLowcredit;
   </script>
 </body>
 </html>
