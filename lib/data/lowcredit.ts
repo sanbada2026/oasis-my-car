@@ -7,11 +7,12 @@ export interface LowCreditVehicle {
   note: string;
 }
 
-// 저신용렌트 재고 업데이트 방법:
+// 저신용상품 (저신용장기렌트 정보 공유) 재고 업데이트 방법:
 // 매일 당신이 만드는 신차/중고차 엑셀 재고 파일을 열어서
 // model, type(신차/중고), price(월 XX만원), stock, note 를 복사해서
 // 아래 배열에 새 객체로 추가/수정하세요.
-// 이 파일만 수정하면 사이트에 바로 반영됩니다.
+// 이 파일만 수정하면 /lowcredit 페이지(4번 저신용상품) + 필터/그리드에 바로 반영됩니다.
+// note에는 "저신용 협의 가능", "무보증 협의 가능", "승인율 높음" 등 실제 팁 기재.
 export const lowCreditVehicles: LowCreditVehicle[] = [
   {
     id: "lc-001",
@@ -19,7 +20,7 @@ export const lowCreditVehicles: LowCreditVehicle[] = [
     type: "신차",
     price: "월 42만원",
     stock: 4,
-    note: "저신용 협의 가능, 보증금 0~10%",
+    note: "저신용 협의 가능",
   },
   {
     id: "lc-002",
