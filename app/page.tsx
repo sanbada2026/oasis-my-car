@@ -90,7 +90,7 @@ export default function Home() {
               { href: "/special", label: "특가 조건", sub: "투명한 유리 조건" },
               { href: "/rocket", label: "로켓출고 차량", sub: "즉시 출고 가능" },
               { href: "/reviews", label: "출고 후기", sub: "2,000대+ 실제 후기" },
-              { href: "/aftercare", label: "사후관리", sub: "출고 후까지 책임" },
+              { href: "/lowcredit", label: "저신용렌트", sub: "저신용자 특화 재고" },
             ].map((m, i) => (
               <Link key={i} href={m.href} className="group card p-6 flex flex-col justify-between min-h-[140px] hover:border-[#C5A46E]">
                 <div>
