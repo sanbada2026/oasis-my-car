@@ -25,10 +25,10 @@ export default function Header() {
           <img 
             src="/images/logo.svg" 
             alt="오아시스 마이카" 
-            className="h-10 w-auto" 
+            className="h-10 w-auto"
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
           />
-          {/* 로고가 아이콘만 포함된 경우 아래 텍스트를 추가하세요 */}
-          {/* <span className="font-semibold text-xl tracking-[-0.3px] text-[#0F172A]">오아시스 마이카</span> */}
+          <span className="font-semibold text-xl tracking-[-0.3px] text-[#0F172A]">오아시스 마이카</span>
         </Link>
 
         {/* Desktop Nav */}
