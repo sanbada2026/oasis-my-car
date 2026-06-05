@@ -8,9 +8,10 @@ interface Props {
   variant?: "primary" | "nav" | "outline";
   size?: "default" | "lg";
   onClick?: () => void;
+  prefillVehicle?: string;
 }
 
-export default function ConsultationCTA({ variant = "primary", size = "default", onClick }: Props) {
+export default function ConsultationCTA({ variant = "primary", size = "default", onClick, prefillVehicle }: Props) {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -31,10 +32,10 @@ export default function ConsultationCTA({ variant = "primary", size = "default",
   return (
     <>
       <button onClick={handleClick} className={`${base} ${styles}`}>
-        상담 · 견적 요청
+        상담 요청
         {variant !== "nav" && <ArrowRight className="w-4 h-4" />}
       </button>
-      <ConsultationModal open={open} onOpenChange={setOpen} />
+      <ConsultationModal open={open} onOpenChange={setOpen} prefillVehicle={prefillVehicle} />
     </>
   );
 }
