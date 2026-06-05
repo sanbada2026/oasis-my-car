@@ -6,13 +6,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-10">
         <div className="md:col-span-5">
           <div className="flex items-center gap-3 mb-2">
+            {/* Bottom logo area uses nice 'Oasis My car' typography per spec (font-semibold text-xl tracking-tight matching premium style); img as accent with fallback */}
             <img 
               src="/images/logo.svg" 
               alt="오아시스 마이카" 
               className="h-9 w-auto"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
             />
-            <span className="font-semibold text-2xl text-white tracking-tight">Oasis My car</span>
+            <span className="font-semibold text-xl text-white tracking-tight">Oasis My car</span>
           </div>
           <div className="text-white/60">AI나 광고가 아닌 사람이 정성으로 케어합니다.</div>
           <div className="mt-6 text-xs leading-relaxed text-white/50 max-w-xs">
