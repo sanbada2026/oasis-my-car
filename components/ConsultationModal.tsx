@@ -22,7 +22,7 @@ export default function ConsultationModal({ open, onOpenChange, prefillVehicle }
         <div className="flex items-center justify-between px-6 py-5 border-b">
           <div>
             <div className="font-semibold text-xl">상담 요청</div>
-            <div className="text-xs text-[#C5A46E] tracking-widest mt-0.5">전문가가 직접 답변드립니다</div>
+            <div className="text-xs text-[#C5A46E] tracking-widest mt-0.5">10년 경력 전문가가 직접 답변드립니다</div>
             {prefillVehicle && (
               <div className="text-xs mt-1 text-[#B38A4F]">선택 차량: {prefillVehicle}</div>
             )}
