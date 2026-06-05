@@ -25,10 +25,11 @@ export default function Footer() {
           <div className="font-medium text-white mb-4 text-sm tracking-widest">MENU</div>
           <div className="space-y-2.5 text-white/70">
             <Link href="/about" className="block hover:text-white">1. 회사 소개</Link>
-            <Link href="/special" className="block hover:text-white">2. 특가 조건</Link>
+            <Link href="/special" className="block hover:text-white">2. 🔥 핫딜차량</Link>
             <Link href="/rocket" className="block hover:text-white">3. 로켓출고 차량</Link>
-            <Link href="/reviews" className="block hover:text-white">4. 출고 후기</Link>
-            <Link href="/lowcredit" className="block hover:text-white">5. 저신용렌트</Link>
+            <Link href="/lowcredit" className="block hover:text-white">4. 💳 저신용상품</Link>
+            <Link href="/reviews" className="block hover:text-white">5. 출고 후기</Link>
+            <Link href="/aftercare" className="block hover:text-white">6. 🔧 차량관리</Link>
           </div>
         </div>
 
