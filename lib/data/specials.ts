@@ -6,17 +6,18 @@ export interface Special {
   note?: string;
 }
 
-// 프로모션 차량(특가) 추가 방법:
+// 핫딜차량(오늘의 핫딜) 추가 방법:
 // 이 배열에 새 객체를 추가한 후 저장하세요.
 // Hyundai/Kia 인기 모델 위주로 월 렌탈료 45~75만원 범위로 현실적으로 작성.
-// badge는 "프로모션", "재고특가" 등, note는 "재고할인 적용", "즉시 출고" 등 부가 설명.
-// 사이트 전체에 반영되니 이 파일만 수정하면 됩니다.
+// badge는 "재고특가", "프로모션" 등, note는 "재고할인 적용", "즉시 출고" 등 부가 설명.
+// 사이트 전체(메인 teaser, /special 페이지, 모달 prefill)에 반영되니 이 파일만 수정하면 됩니다.
+// 금리 숫자 없이 "최저금리", 보증금 문구는 "보증금 조건시 > 무보증 협의 가능" 사용.
 export const specials: Special[] = [
   {
     id: "sp-001",
     model: "디올뉴그랜저HEV 캘리그래피",
     monthly: "월 65만원",
-    badge: "프로모션",
+    badge: "재고특가",
     note: "재고할인 적용",
   },
   {
@@ -36,7 +37,7 @@ export const specials: Special[] = [
     id: "sp-004",
     model: "기아 쏘렌토 하이브리드 시그니처",
     monthly: "월 52만원",
-    badge: "프로모션",
+    badge: "핫딜",
   },
   {
     id: "sp-005",
@@ -49,7 +50,7 @@ export const specials: Special[] = [
     model: "기아 K8 하이브리드 노블레스",
     monthly: "월 49만원",
     badge: "신규고객",
-    note: "저금리 프로모션",
+    note: "최저금리 적용",
   },
   {
     id: "sp-007",
@@ -62,5 +63,11 @@ export const specials: Special[] = [
     monthly: "월 47만원",
     badge: "재고특가",
     note: "연비 우수 모델",
+  },
+  {
+    id: "sp-009",
+    model: "현대 그랜저 가솔린 2.5",
+    monthly: "월 45만원",
+    badge: "핫딜",
   },
 ];
