@@ -17,18 +17,23 @@ const navItems = [
 export default function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <img 
-            src="/images/logo.svg" 
-            alt="오아시스 마이카" 
-            className="h-10 w-auto"
-            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
-          />
-          <span className="font-semibold text-xl tracking-[-0.3px] text-[#0F172A]">오아시스 마이카</span>
+          {/* Logo: prefer SVG img, with onError fallback to nice text typography */}
+          {!logoError ? (
+            <img 
+              src="/images/logo.svg" 
+              alt="오아시스 마이카" 
+              className="h-10 w-auto" 
+              onError={() => setLogoError(true)}
+            />
+          ) : (
+            <span className="font-semibold text-xl tracking-tight text-[#0F172A]">오아시스 마이카</span>
+          )}
         </Link>
 
         {/* Desktop Nav */}
