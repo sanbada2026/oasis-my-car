@@ -13,13 +13,13 @@ export interface RocketVehicle {
   note?: string;
 }
 
-// 로켓출고 차량 추가 방법:
-// when user uploads Hyundai/Kia Excel (daily import simulation), curate(선별)하여 이 배열에 추가하세요.
+// 로켓출고 차량 데이터 관리 방법 (엑셀 연동):
+// 매일 현대/기아 재고 엑셀 파일을 받아 curate(선별) 후 이 배열에 붙여넣기/수정하세요.
+// 필터: 브랜드(현대/기아), 차종(세단/SUV/MPV), 연료(하이브리드/디젤/가솔린/전기) + 검색만 지원 (정렬 항목은 제거됨).
 // brand: "현대" | "기아", fuelType: "하이브리드" | "디젤" | "가솔린" | "전기"
-// estMonthly: "월 XX만원" 형식, deliveryDays: "즉시" | "1~3일" | "2~5일" 등
-// stock: 숫자 재고량, imagePlaceholder: picsum url 등
-// 15대+ 유지, mix 현대/기아 + 다양한 카테고리, high volume 시뮬레이션용으로 scannable하게 관리.
-// 이 파일만 수정하면 로켓 페이지에 반영됩니다.
+// estMonthly: "월 XX만원", deliveryDays: "즉시" | "1~2일" | "3~5일" 등, stock: 숫자
+// imagePlaceholder: picsum 등 placeholder. 16대+ 유지, mix 모델로 고볼륨 scannable UI.
+// 이 파일만 수정 = 로켓 페이지 전체 반영. (sort 제거됨: 사용자가 복잡하니 제거 요청)
 export const rocketVehicles: RocketVehicle[] = [
   {
     id: "rkt-001",
