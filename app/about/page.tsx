@@ -1,6 +1,6 @@
 import { aboutContent } from "@/lib/content/about";
 import Link from "next/link";
-import ConsultationCTA from "./components/ConsultationCTA";
+import ConsultationCTA from "@/components/ConsultationCTA";
 
 export default function AboutPage() {
   const { hero, story, numbers, philosophy } = aboutContent;
@@ -45,7 +45,7 @@ export default function AboutPage() {
       <section className="bg-[#0F172A] py-16 text-white text-center">
         <div className="max-w-xl mx-auto px-6">
           <h3 className="text-2xl font-semibold mb-3">진심으로 만나 상담해보세요</h3>
-          <p className="text-white/70 mb-8">10년 경력의 전문가가 직접 답방해드립니다.</p>
+          <p className="text-white/70 mb-8">10년 경력의 전문가가 직접 답변드립니다.</p>
           <ConsultationCTA variant="primary" />
         </div>
       </section>
