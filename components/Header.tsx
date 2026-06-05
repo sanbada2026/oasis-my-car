@@ -8,10 +8,11 @@ import ConsultationCTA from "./ConsultationCTA";
 
 const navItems = [
   { href: "/about", label: "회사 소개" },
-  { href: "/special", label: "특가 조건" },
+  { href: "/special", label: "🔥 핫딜차량" },
   { href: "/rocket", label: "로켓출고 차량" },
+  { href: "/lowcredit", label: "💳 저신용상품" },
   { href: "/reviews", label: "출고 후기" },
-  { href: "/lowcredit", label: "저신용렌트" },
+  { href: "/aftercare", label: "🔧 차량관리" },
 ];
 
 export default function Header() {
