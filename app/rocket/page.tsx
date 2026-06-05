@@ -14,7 +14,7 @@ export default function RocketPage() {
   const [brand, setBrand] = useState<BrandFilter>("전체");
   const [category, setCategory] = useState<CategoryFilter>("전체");
   const [fuel, setFuel] = useState<FuelFilter>("전체");
-  const [sort, setSort] = useState<SortOption>();
+  const [sort, setSort] = useState<SortOption>("출고빠른순");
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
