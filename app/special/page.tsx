@@ -5,17 +5,17 @@ export default function SpecialPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <div className="max-w-2xl">
-        <div className="text-[#C5A46E] text-sm tracking-widest">TODAY'S PROMOTION</div>
-        <h1 className="section-title mt-2">오늘의 프로모션 차량</h1>
+        <div className="text-[#C5A46E] text-sm tracking-widest">TODAY'S HOT DEAL</div>
+        <h1 className="section-title mt-2">🔥 오늘의 핫딜차량</h1>
         <p className="mt-4 text-lg text-slate-600">
-          어느곳과 비교해도 자신있는 최저금리 견적
+          어느곳과 비교해도 자신있는 <strong className="text-[#C5A46E]">최저금리</strong> 견적
         </p>
       </div>
 
       <ul className="mt-4 space-y-1 text-sm text-slate-600 list-none">
-        <li>*재고할인 또는 특판할인</li>
-        <li>*무보증 협의 가능</li>
-        <li>*디올뉴그랜저HEV 캘리그래피 월 65만원 추천</li>
+        <li>* 재고할인 또는 특판할인</li>
+        <li>* <strong className="text-[#C5A46E]">보증금 조건시 &gt; 무보증 협의 가능</strong></li>
+        <li>* 디올뉴그랜저HEV 캘리그래피 월 65만원 추천</li>
       </ul>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
