@@ -8,7 +8,6 @@ import { toast } from "sonner";
 const schema = z.object({
   name: z.string().min(2, "이름을 입력해주세요"),
   phone: z.string().min(9, "연락처를 입력해주세요"),
-  email: z.string().email().optional().or(z.literal("")),
   interest: z.string().optional(),
   vehicle: z.string().optional(),
   message: z.string().min(5, "상담 내용을 입력해주세요"),
@@ -29,16 +28,10 @@ export default function ConsultationForm({ compact, onSuccess, prefillVehicle }:
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-    setValue,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: { agree: true as const, vehicle: prefillVehicle || "" },
   });
-
-  // Update if prefill changes while open
-  if (prefillVehicle) {
-    // set on mount effect not needed for simple since default on open
-  }
 
   const onSubmit = async (data: FormData) => {
     // Server Action 시뮬레이션 (MVP)
@@ -67,14 +60,11 @@ export default function ConsultationForm({ compact, onSuccess, prefillVehicle }:
         </div>
       </div>
 
-      <input {...register("email")} placeholder="이메일 (선택)" className="input" />
-
       <select {...register("interest")} className="input">
         <option value="">상담 분야 선택 (선택)</option>
         <option value="특가 조건">특가 조건</option>
         <option value="로켓출고 차량">로켓출고 차량</option>
         <option value="일반 상담">일반 상담</option>
-        <option value="사후관리">사후관리</option>
       </select>
 
       <input {...register("vehicle")} placeholder="희망 차종 또는 모델 (선택)" className="input" defaultValue={prefillVehicle} />
@@ -105,7 +95,7 @@ export default function ConsultationForm({ compact, onSuccess, prefillVehicle }:
 
       <p className="text-center text-[10px] text-slate-400 pt-1">
         제출 후 전화로 우선 연락드립니다.
-      </p>
-    </form>
+    </p>
+  </form>
   );
 }
