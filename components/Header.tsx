@@ -11,7 +11,7 @@ const navItems = [
   { href: "/special", label: "특가 조건" },
   { href: "/rocket", label: "로켓출고 차량" },
   { href: "/reviews", label: "출고 후기" },
-  { href: "/aftercare", label: "사후관리" },
+  { href: "/lowcredit", label: "저신용렌트" },
 ];
 
 export default function Header() {
