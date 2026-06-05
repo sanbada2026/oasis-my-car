@@ -90,7 +90,7 @@ export default function ConsultationForm({ compact, onSuccess, prefillVehicle }:
         disabled={isSubmitting}
         className="w-full btn-primary py-3.5 text-base disabled:opacity-70"
       >
-        {isSubmitting ? "접수 중..." : "상담 요청하기"}
+        {isSubmitting ? "접수 중..." : "상담 요청"}
       </button>
 
       <p className="text-center text-[10px] text-slate-400 pt-1">
