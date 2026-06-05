@@ -1,4 +1,4 @@
-import ConsultationCTA from "./components/ConsultationCTA";
+import ConsultationCTA from "@/components/ConsultationCTA";
 
 const steps = [
   { num: "01", title: "계약 후 안내", desc: "서류, 보험, 하이패스 등 기본 설정 안내" },
