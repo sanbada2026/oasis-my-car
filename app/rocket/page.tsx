@@ -14,7 +14,7 @@ export default function RocketPage() {
   const [brand, setBrand] = useState<BrandFilter>("전체");
   const [category, setCategory] = useState<CategoryFilter>("전체");
   const [fuel, setFuel] = useState<FuelFilter>("전체");
-  const [sort, setSort] = useState<SortOption>("출고빠른순");
+  const [sort, setSort] = useState<SortOption>();
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
@@ -62,10 +62,7 @@ export default function RocketPage() {
 
   const openPrefill = (model: string) => {
     setSelectedVehicle(model);
-    // The CTA will open the modal; we pass prefill on render of CTA below via key or state
   };
-
-  // reset selected after modal conceptually closes, but CTA handles open
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-14">
@@ -182,12 +179,12 @@ export default function RocketPage() {
                 <div className="font-semibold text-lg leading-tight mb-0.5 tracking-[-0.2px]">{v.model}</div>
                 <div className="text-[11px] text-[#C5A46E] uppercase tracking-[1px] mb-2">{v.category} · {v.fuelType || "연료"}</div>
 
-                {/* estMonthly large if present or 상담 견적 */}
+                {/* estMonthly large if present or 상담 요청 */}
                 <div className="mb-2">
                   {v.estMonthly ? (
                     <span className="text-2xl font-semibold text-[#0F172A]">{v.estMonthly}</span>
                   ) : (
-                    <span className="text-sm font-medium text-[#C5A46E]">상담 견적</span>
+                    <span className="text-sm font-medium text-[#C5A46E]">상담 요청</span>
                   )}
                 </div>
 
@@ -207,7 +204,6 @@ export default function RocketPage() {
                   variant="outline"
                   prefillVehicle={v.model}
                 />
-                {/* Alternative direct for prefill simulation if needed */}
               </div>
             </div>
           );
@@ -219,7 +215,7 @@ export default function RocketPage() {
 
       {/* Footer of section */}
       <div className="mt-10 pt-6 border-t text-xs text-slate-500">
-        현재 <span className="font-medium text-[#0F172A]">{showing}대</span> 표시 중 / 전체 {total}대 (현대·기아 엑셀 매일 업데이트 기반 엄선. 실제 재고·조건은 1:1 상담으로 확인)
+        현재 <span className="font-medium text-[#0F172A]">{showing}대</span> 표시 중 / 전체 {total}대 (현대·기아 엑셀 매일 업데이트 기반 엄선. 실제 재고·조건은 상담으로 확인)
         <div className="mt-1 text-[10px] text-slate-400">엑셀 업로드 시 curate 하여 이 파일만 업데이트 (lib/data/rockets.ts)</div>
       </div>
 
