@@ -9,10 +9,12 @@ export default function Footer() {
             <img 
               src="/images/logo.svg" 
               alt="오아시스 마이카" 
-              className="h-9 w-auto" 
+              className="h-9 w-auto"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
             />
+            <span className="font-semibold text-2xl text-white tracking-tight">Oasis My car</span>
           </div>
-          <div className="text-white/60">10년 전문가의 진심 상담</div>
+          <div className="text-white/60">AI나 광고가 아닌 사람이 정성으로 케어합니다.</div>
           <div className="mt-6 text-xs leading-relaxed text-white/50 max-w-xs">
             오아시스 마이카는 10년 이상 장기렌트 · 오토리스 현장 전문가가 직접 운영하는 전문 기업입니다.<br />
             누적 출고 2,000대+ 고객의 신뢰를 받고 있습니다.
@@ -53,7 +55,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/10 text-[10px] text-white/40 flex flex-wrap gap-x-4">
         <span>사업자등록번호: 예시 000-00-00000</span>
         <span>통신판매업 신고번호: 제0000호</span>
-        <Link href="/contact" className="hover:text-white/60">1:1 상담 요청</Link>
+        <Link href="/contact" className="hover:text-white/60">상담 요청</Link>
       </div>
     </footer>
   );
