@@ -28,6 +28,9 @@ export default function Home() {
             <Link href="/rocket" className="btn-outline border-white/70 text-white hover:bg-white hover:text-[#0F172A] px-8 py-4 rounded-2xl inline-flex items-center justify-center gap-2 text-lg">
               로켓출고 차량 보기 <ArrowRight className="w-5 h-5" />
             </Link>
+            <Link href="/special" className="btn-outline border-white/70 text-white hover:bg-white hover:text-[#0F172A] px-8 py-4 rounded-2xl inline-flex items-center justify-center gap-2 text-lg">
+              🔥 핫딜차량 보기 <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
           <div className="mt-12 text-white/60 text-sm tracking-widest">SCROLL TO EXPLORE</div>
         </div>
@@ -84,13 +87,14 @@ export default function Home() {
             </div>
             <Link href="/about" className="hidden md:inline-flex items-center text-sm text-[#C5A46E] hover:underline"> 전체 보기 <ArrowRight className="ml-1 w-4 h-4" /></Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
             {[
               { href: "/about", label: "회사 소개", sub: "정한일 대표의 이야기" },
-              { href: "/special", label: "특가 조건", sub: "투명한 유리 조건" },
+              { href: "/special", label: "🔥 핫딜차량", sub: "핫한 조건" },
               { href: "/rocket", label: "로켓출고 차량", sub: "즉시 출고 가능" },
+              { href: "/lowcredit", label: "💳 저신용상품", sub: "저신용 장기렌트 정보" },
               { href: "/reviews", label: "출고 후기", sub: "2,000대+ 실제 후기" },
-              { href: "/lowcredit", label: "저신용렌트", sub: "저신용자 특화 재고" },
+              { href: "/aftercare", label: "🔧 차량관리", sub: "차량 재고 관리" },
             ].map((m, i) => (
               <Link key={i} href={m.href} className="group card p-6 flex flex-col justify-between min-h-[140px] hover:border-[#C5A46E]">
                 <div>
