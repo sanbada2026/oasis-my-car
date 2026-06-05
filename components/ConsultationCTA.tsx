@@ -31,6 +31,7 @@ export default function ConsultationCTA({ variant = "primary", size = "default",
 
   return (
     <>
+      {/* CTA button label updated to "상담 요청" (removed · 견적) for all variants incl nav/mobile */}
       <button onClick={handleClick} className={`${base} ${styles}`}>
         상담 요청
         {variant !== "nav" && <ArrowRight className="w-4 h-4" />}
