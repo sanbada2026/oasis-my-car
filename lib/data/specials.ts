@@ -34,13 +34,13 @@ export const specials: Special[] = [
   },
   {
     id: "sp-004",
-    model: "기아 쏘레토 하이브리드 시그니처",
+    model: "기아 쏘렌토 하이브리드 시그니처",
     monthly: "월 52만원",
     badge: "프로모션",
   },
   {
     id: "sp-005",
-    model: "현대 팔리세이드 디젤 3.0",
+    model: "현대 팰리세이드 디젤 3.0",
     monthly: "월 68만원",
     note: "대형 SUV 재고 한정",
   },
