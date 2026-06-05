@@ -20,16 +20,53 @@ export default function LowCreditPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-14">
       <div className="mb-6">
-        <div className="text-[#C5A46E] text-xs tracking-widest">LOW CREDIT LEASE</div>
-        <h1 className="section-title mt-1">저신용렌트</h1>
+        <div className="text-[#C5A46E] text-xs tracking-widest">LOW CREDIT INFO</div>
+        <h1 className="section-title mt-1">💳 저신용상품</h1>
         <p className="mt-3 text-slate-600">
-          저신용자도 이용 가능한 신차/중고차 특화 상품입니다. 매일 업데이트되는 재고를 확인하세요.
-        </p>
-        <p className="text-xs text-slate-500 mt-1">
-          ※ 매일 엑셀 재고 파일(신차/중고)에서 데이터를 복사해서 lib/data/lowcredit.ts 에 붙여넣으세요. (이 파일만 수정하면 반영)
+          저신용자도 이용 가능한 장기렌트 정보를 공유합니다. 실제 경험과 팁을 확인하세요.
         </p>
       </div>
 
+      {/* Info sharing cards - 저신용장기렌트 정보 중심 */}
+      <div className="grid md:grid-cols-2 gap-6 mb-10">
+        <div className="card p-6">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">✅</span>
+            <h3 className="font-semibold text-xl">높은 승인율</h3>
+          </div>
+          <p className="text-slate-600">저신용 전용 상품으로 <strong className="text-[#C5A46E]">심사 통과율이 높습니다</strong>. 개인/법인 모두 적용 가능합니다.</p>
+        </div>
+        <div className="card p-6">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">📉</span>
+            <h3 className="font-semibold text-xl">맞춤 상담</h3>
+          </div>
+          <p className="text-slate-600">신용 점수가 낮아도 <strong className="text-[#C5A46E]">전문가가 직접 상담</strong>해 최적 조건을 찾아드립니다.</p>
+        </div>
+        <div className="card p-6">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">💰</span>
+            <h3 className="font-semibold text-xl">유연한 조건</h3>
+          </div>
+          <p className="text-slate-600">보증금 조건 유연, 무보증 협의 가능한 <strong className="text-[#C5A46E]">플렉시블 상품</strong>을 제공합니다.</p>
+        </div>
+        <div className="card p-6">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">🔄</span>
+            <h3 className="font-semibold text-xl">출고 후 사후관리</h3>
+          </div>
+          <p className="text-slate-600">출고 후도 <strong className="text-[#C5A46E]">계약 만기까지 책임</strong> 지는 전문 사후 서비스를 받으세요.</p>
+        </div>
+      </div>
+
+      <div className="mb-4">
+        <div className="text-sm font-medium text-[#0F172A]">예시 재고 (신차/중고) — 엑셀 업데이트로 실시간 관리</div>
+        <p className="text-xs text-slate-500 mt-1">
+          ※ 매일 내가 만드는 신차/중고차 엑셀 재고 파일에서 데이터를 복사해서 lib/data/lowcredit.ts 에 붙여넣으세요. (이 파일만 수정하면 반영)
+        </p>
+      </div>
+
+      {/* Filter bar */}
       <div className="bg-white border rounded-2xl p-4 mb-6 shadow-sm">
         <div className="flex flex-col md:flex-row gap-3">
           <input
@@ -89,8 +126,12 @@ export default function LowCreditPage() {
         ))}
       </div>
 
+      <div className="mt-8 text-center">
+        <ConsultationCTA variant="primary" />
+      </div>
+
       <div className="mt-6 text-xs text-slate-500">
-        재고는 실시간 변동됩니다. 정확한 조건은 상담 후 확인하세요.
+        재고는 실시간 변동됩니다. 정확한 조건은 상담 후 확인하세요. 저신용 전용 상담 환영합니다.
       </div>
     </div>
   );
