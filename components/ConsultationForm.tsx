@@ -20,18 +20,25 @@ type FormData = z.infer<typeof schema>;
 interface Props {
   compact?: boolean;
   onSuccess?: () => void;
+  prefillVehicle?: string;
 }
 
-export default function ConsultationForm({ compact, onSuccess }: Props) {
+export default function ConsultationForm({ compact, onSuccess, prefillVehicle }: Props) {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
+    setValue,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
-    defaultValues: { agree: true as const },
+    defaultValues: { agree: true as const, vehicle: prefillVehicle || "" },
   });
+
+  // Update if prefill changes while open
+  if (prefillVehicle) {
+    // set on mount effect not needed for simple since default on open
+  }
 
   const onSubmit = async (data: FormData) => {
     // Server Action 시뮬레이션 (MVP)
@@ -40,7 +47,7 @@ export default function ConsultationForm({ compact, onSuccess }: Props) {
     console.log("[CONSULT SUBMIT]", data);
 
     toast.success("접수 완료! 10분 이내 직접 연락드립니다.", {
-      description: "정한일 대표가 확인 후 연락드립니다.",
+      description: "전문가가 확인 후 연락드립니다.",
     });
 
     reset();
@@ -70,12 +77,12 @@ export default function ConsultationForm({ compact, onSuccess }: Props) {
         <option value="사후관리">사후관리</option>
       </select>
 
-      <input {...register("vehicle")} placeholder="희망 차종 또는 모델 (선택)" className="input" />
+      <input {...register("vehicle")} placeholder="희망 차종 또는 모델 (선택)" className="input" defaultValue={prefillVehicle} />
 
       <textarea
         {...register("message")}
         rows={compact ? 3 : 4}
-        placeholder="상담 내용 (ye예산, 기간, 용도 등)"
+        placeholder="상담 내용 (예산, 기간, 용도 등)"
         className="input resize-y min-h-[92px]"
       />
       {errors.message && <p className="text-xs text-red-500 -mt-2">{errors.message.message}</p>}
