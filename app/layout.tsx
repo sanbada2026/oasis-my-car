@@ -14,7 +14,7 @@ const notoSansKR = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   title: "오아시스 마이카 | 신차 장기렌트 · 오토리스 전문",
-  description: "10년 전문가 정한일 대표가 직접 운영하는 신차 장기렌트 · 오토리스 전문. 화려한 광고가 아닌, 사람의 경험과 진심으로 고객을 케어합니다. 누적 출고 2,000대+.",
+  description: "AI나 광고가 아닌 사람이 정성으로 케어하는 신차 장기렌트 · 오토리스 전문. 누적 출고 2,000대+.",
   icons: {
     icon: "/favicon.ico",
   },
