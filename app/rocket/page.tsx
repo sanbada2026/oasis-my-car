@@ -7,14 +7,12 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 type BrandFilter = "전체" | "현대" | "기아";
 type CategoryFilter = "전체" | "세단" | "SUV" | "MPV";
 type FuelFilter = "전체" | "하이브리드" | "디젤" | "가솔린" | "전기";
-type SortOption = "출고빠른순" | "재고많은순" | "월비용낮은순";
 
 export default function RocketPage() {
   const [search, setSearch] = useState("");
   const [brand, setBrand] = useState<BrandFilter>("전체");
   const [category, setCategory] = useState<CategoryFilter>("전체");
   const [fuel, setFuel] = useState<FuelFilter>("전체");
-  const [sort, setSort] = useState<SortOption>("출고빠른순");
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
@@ -34,28 +32,9 @@ export default function RocketPage() {
     if (category !== "전체") list = list.filter((v) => v.category === category);
     if (fuel !== "전체") list = list.filter((v) => v.fuelType === fuel);
 
-    // sort
-    if (sort === "출고빠른순") {
-      // prefer 즉시 / low days numeric-ish
-      const dayScore = (d: string) => {
-        if (d.includes("즉시")) return 0;
-        const m = d.match(/(\d+)/);
-        return m ? parseInt(m[1], 10) : 99;
-      };
-      list.sort((a, b) => dayScore(a.deliveryDays) - dayScore(b.deliveryDays));
-    } else if (sort === "재고많은순") {
-      list.sort((a, b) => b.stock - a.stock);
-    } else if (sort === "월비용낮은순") {
-      const getCost = (m?: string) => {
-        if (!m) return 999;
-        const n = m.match(/(\d+)/);
-        return n ? parseInt(n[1], 10) : 999;
-      };
-      list.sort((a, b) => getCost(a.estMonthly) - getCost(b.estMonthly));
-    }
-
+    // no sort per request - just filtered order from data (or stable)
     return list;
-  }, [search, brand, category, fuel, sort]);
+  }, [search, brand, category, fuel]);
 
   const total = rocketVehicles.length;
   const showing = filtered.length;
@@ -68,11 +47,11 @@ export default function RocketPage() {
     <div className="max-w-6xl mx-auto px-6 py-14">
       <div className="max-w-2xl mb-8">
         <div className="text-[#C5A46E] uppercase tracking-[2px] text-xs">ROCKET DELIVERY</div>
-        <h1 className="section-title mt-1">로켓출고 차량</h1>
-        <p className="mt-3 text-slate-600">"즉시 또는 빠른 출고가 가능한 차량들입니다. 재고 상황은 실시간 변동되니 상담으로 확인해 주세요."</p>
+        <h1 className="section-title mt-1">3. 로켓출고 차량</h1>
+        <p className="mt-3 text-slate-600">즉시 또는 빠른 출고가 가능한 차량들입니다. 재고 상황은 실시간 변동되니 상담으로 확인해 주세요.</p>
       </div>
 
-      {/* Top Toolbar - live filters/search */}
+      {/* Top Toolbar - live filters/search ONLY (no sort) */}
       <div className="sticky top-20 z-40 bg-[#F8FAFC] py-4 -mx-1 mb-6 border-b border-slate-100">
         <div className="flex flex-col gap-3">
           {/* Search */}
@@ -87,7 +66,7 @@ export default function RocketPage() {
             <span className="absolute left-3.5 top-3 text-slate-400">🔍</span>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 text-sm">
             {/* 브랜드 pills */}
             <div className="flex flex-wrap gap-1.5 items-center">
               <span className="text-xs text-slate-500 mr-1 w-10">브랜드</span>
@@ -128,20 +107,6 @@ export default function RocketPage() {
                   {f}
                 </button>
               ))}
-            </div>
-
-            {/* Sort */}
-            <div className="flex items-center gap-2 col-span-2 md:col-span-2">
-              <span className="text-xs text-slate-500 w-10 shrink-0">정렬</span>
-              <select
-                value={sort}
-                onChange={(e) => setSort(e.target.value as SortOption)}
-                className="flex-1 py-1.5 px-3 rounded-2xl border border-slate-200 bg-white text-sm focus:border-[#C5A46E]"
-              >
-                <option value="출고빠른순">출고빠른순</option>
-                <option value="재고많은순">재고많은순</option>
-                <option value="월비용낮은순">월비용낮은순</option>
-              </select>
             </div>
           </div>
         </div>
