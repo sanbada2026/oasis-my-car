@@ -6,7 +6,6 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-y-10">
         <div className="md:col-span-5">
           <div className="flex items-center gap-3 mb-2">
-            {/* Bottom logo area uses nice 'Oasis My car' typography per spec (font-semibold text-xl tracking-tight matching premium style); img as accent with fallback */}
             <img 
               src="/images/logo.svg" 
               alt="오아시스 마이카" 
@@ -29,7 +28,7 @@ export default function Footer() {
             <Link href="/special" className="block hover:text-white">2. 특가 조건</Link>
             <Link href="/rocket" className="block hover:text-white">3. 로켓출고 차량</Link>
             <Link href="/reviews" className="block hover:text-white">4. 출고 후기</Link>
-            <Link href="/aftercare" className="block hover:text-white">5. 사후관리</Link>
+            <Link href="/lowcredit" className="block hover:text-white">5. 저신용렌트</Link>
           </div>
         </div>
 
