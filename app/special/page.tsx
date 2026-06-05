@@ -1,43 +1,43 @@
 import { specials } from "@/lib/data/specials";
-import ConsultationCTA from "./components/ConsultationCTA";
-import { Check } from "lucide-react";
+import ConsultationCTA from "@/components/ConsultationCTA";
 
 export default function SpecialPage() {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
       <div className="max-w-2xl">
-        <div className="text-[#C5A46E] text-sm tracking-widest">SPECIAL CONDITIONS</div>
-        <h1 className="section-title mt-2">특가 조건</h1>
+        <div className="text-[#C5A46E] text-sm tracking-widest">TODAY'S PROMOTION</div>
+        <h1 className="section-title mt-2">오늘의 프로모션 차량</h1>
         <p className="mt-4 text-lg text-slate-600">
-          가격 리스트 대신, 진짜 고객에게 유리한 조건을 투명히 안내드립니다.<br />
-          모든 특가는 1:1 상담 후 확정됩니다.
+          어느곳과 비교해도 자신있는 최저금리 견적
         </p>
       </div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
+      <ul className="mt-4 space-y-1 text-sm text-slate-600 list-none">
+        <li>*재고할인 또는 특판할인</li>
+        <li>*무보증 협의 가능</li>
+        <li>*디올뉴그랜저HEV 캘리그래피 월 65만원 추천</li>
+      </ul>
+
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {specials.map((s) => (
-          <div key={s.id} className="card p-8">
-            <div className="uppercase text-xs tracking-[2px] text-[#C5A46E] mb-2">CONDITION</div>
-            <h3 className="text-2xl font-semibold mb-2 text-[#0F172A]">{s.title}</h3>
-            <p className="text-slate-600 mb-6">{s.description}</p>
+          <div key={s.id} className="card p-6 flex flex-col border border-slate-200 hover:border-[#C5A46E]/50 transition">
+            <div className="font-bold text-xl mb-1 text-[#0F172A]">{s.model}</div>
+            <div className="text-4xl font-semibold tracking-[-1px] text-[#0F172A] mb-3">{s.monthly}</div>
 
-            <ul className="space-y-2.5 mb-8">
-              {s.conditions.map((c, idx) => (
-                <li key={idx} className="flex gap-3 text-sm"><Check className="w-5 h-5 mt-px shrink-0 text-[#C5A46E]" /> {c}</li>
-              ))}
-            </ul>
+            {s.badge && (
+              <div className="inline-block text-xs bg-[#C5A46E]/10 text-[#B38A4F] px-3 py-1 rounded mb-2 self-start">{s.badge}</div>
+            )}
+            {s.note && <div className="text-sm text-slate-600 mb-4">{s.note}</div>}
 
-            {s.highlight && <div className="inline-block text-xs bg-[#C5A46E]/10 text-[#B38A4F] px-3 py-1 rounded">{s.highlight}</div>}
-
-            <div className="mt-8">
-              <ConsultationCTA variant="outline" />
+            <div className="mt-auto pt-4 border-t">
+              <ConsultationCTA variant="primary" prefillVehicle={s.model} />
             </div>
           </div>
         ))}
       </div>
 
       <div className="mt-12 text-xs text-slate-500 border-t pt-6">
-        정확한 조건과 최종 가격은 상담 후 확정됩니다.
+        정확한 조건은 상담 후 확정됩니다. 재고 및 금리는 변동될 수 있습니다.
       </div>
     </div>
   );
