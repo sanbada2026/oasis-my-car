@@ -6,12 +6,11 @@ export interface Special {
   note?: string;
   brand: "현대" | "기아";
   category: "승용" | "SUV" | "MPV";
-  fuelType: "하이브리드" | "디젤" | "가솔린" | "전기";
+  fuelType: "가솔린" | "하이브리드" | "LPI" | "EV" | "디젤";
 }
 
 // 오늘의 핫딜차량 데이터
-// 필터 지원: brand(현대/기아), category(승용/SUV/MPV), fuelType
-// monthly는 표시하지만 로켓처럼 가격 강조는 최소화 가능. 이 파일만 수정하면 /special 과 teaser 반영.
+// 필터 지원: brand(현대/기아), category(승용/SUV/MPV), fuelType (가솔린,하이브리드,LPI,EV,디젤)
 export const specials: Special[] = [
   {
     id: "sp-001",
