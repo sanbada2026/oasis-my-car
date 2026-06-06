@@ -7,9 +7,12 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      {/* Hero */}
+      {/* Hero - new premium image based on logo style */}
       <section className="relative min-h-[92vh] flex items-center justify-center bg-[#0F172A] text-white">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618843479313-40f8c8f0c6a9?q=80&w=2070')] bg-cover bg-center opacity-40" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-55" 
+          style={{ backgroundImage: `url('/images/hero-main.jpg')` }} 
+        />
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 text-sm tracking-[2px] font-medium">
             10년 전문 직접 운영
@@ -26,7 +29,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConsultationCTA variant="primary" size="lg" />
             <Link href="/rocket" className="btn-outline border-white/70 text-white hover:bg-white hover:text-[#0F172A] px-8 py-4 rounded-2xl inline-flex items-center justify-center gap-2 text-lg">
-              로켓출고 차량 보기 <ArrowRight className="w-5 h-5" />
+              🚀 로켓출고 차량 보기 <ArrowRight className="w-5 h-5" />
             </Link>
             <Link href="/special" className="btn-outline border-white/70 text-white hover:bg-white hover:text-[#0F172A] px-8 py-4 rounded-2xl inline-flex items-center justify-center gap-2 text-lg">
               🔥 핫딜차량 보기 <ArrowRight className="w-5 h-5" />
@@ -54,7 +57,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Differentiation - 차별점 */}
+      {/* Differentiation */}
       <section className="max-w-6xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
           <div className="text-[#C5A46E] text-sm tracking-[3px] font-medium mb-3">오아시스 마이카만의 차별점</div>
