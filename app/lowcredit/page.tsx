@@ -27,14 +27,15 @@ export default function LowCreditPage() {
         </p>
       </div>
 
-      {/* Info sharing cards - 저신용장기렌트 정보 중심 */}
+      {/* Info sharing cards - updated per request */}
       <div className="grid md:grid-cols-2 gap-6 mb-10">
         <div className="card p-6">
           <div className="flex items-center gap-3 mb-3">
             <span className="text-2xl">✅</span>
-            <h3 className="font-semibold text-xl">높은 승인율</h3>
+            <h3 className="font-semibold text-xl">무조건출고</h3>
           </div>
           <p className="text-slate-600">저신용 전용 상품으로 <strong className="text-[#C5A46E]">심사 통과율이 높습니다</strong>. 개인/법인 모두 적용 가능합니다.</p>
+          <div className="mt-2 text-xs text-[#C5A46E] font-medium">신용불량, 연체중에도 진행가능</div>
         </div>
         <div className="card p-6">
           <div className="flex items-center gap-3 mb-3">
