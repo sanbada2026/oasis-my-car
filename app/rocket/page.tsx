@@ -44,7 +44,6 @@ export default function RocketPage() {
         <p className="mt-3 text-slate-600">즉시 또는 빠른 출고가 가능한 차량들입니다. 재고 상황은 실시간 변동되니 상담으로 확인해 주세요.</p>
       </div>
 
-      {/* Filters only (no images, text like 핫딜) */}
       <div className="sticky top-20 z-40 bg-[#F8FAFC] py-4 -mx-1 mb-6 border-b border-slate-100">
         <div className="flex flex-col gap-3">
           <div className="relative">
@@ -52,7 +51,7 @@ export default function RocketPage() {
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="모델 또는 브랜드 검색 (예: 그랜저)"
+              placeholder="모델 또는 브랜드 검색 (예: 그랜저, 하이브리드)"
               className="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-slate-200 focus:border-[#C5A46E] focus:ring-1 focus:ring-[#C5A46E] text-sm bg-white placeholder:text-slate-400"
             />
             <span className="absolute left-3.5 top-3 text-slate-400">🔍</span>
@@ -81,26 +80,53 @@ export default function RocketPage() {
         </div>
       </div>
 
-      {/* Text-only cards like 핫딜 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filtered.map((v) => (
-          <div key={v.id} className="card p-6 flex flex-col border border-slate-200 hover:border-[#C5A46E]/50 transition">
-            <div className="font-bold text-xl mb-1 text-[#0F172A]">{v.model}</div>
-            <div className="text-3xl font-semibold tracking-[-1px] text-[#0F172A] mb-2">{v.estMonthly || "상담 후 확정"}</div>
+      {/* Cards without rental price - only vehicle info */}
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        {filtered.map((v) => {
+          const photo = v.imagePlaceholder || "https://picsum.photos/id/1015/400/240";
+          return (
+            <div key={v.id} className="card overflow-hidden flex flex-col border border-slate-200 hover:border-[#C5A46E]/40 transition">
+              <div className="relative h-28 bg-slate-100 overflow-hidden border-b border-slate-100">
+                <img
+                  src={photo}
+                  alt={v.model}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  onError={(e) => {
+                    const el = e.currentTarget as HTMLImageElement;
+                    el.style.display = "none";
+                    el.parentElement!.style.background = "linear-gradient(135deg, #0F172A 0%, #1e2937 100%)";
+                  }}
+                />
+                <div className="absolute top-2 left-2 px-2 py-0.5 text-[10px] font-medium bg-white/95 text-[#0F172A] rounded border border-[#C5A46E]/60 tracking-wider">
+                  {v.brand}
+                </div>
+              </div>
 
-            <div className="flex flex-wrap gap-2 mb-3">
-              <span className="inline-block text-xs px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-700">{v.deliveryDays} 내</span>
-              <span className="inline-block text-xs px-2.5 py-0.5 rounded bg-amber-100 text-amber-700">재고 {v.stock}대</span>
-              {v.fuelType && <span className="inline-block text-xs px-2.5 py-0.5 rounded bg-slate-100 text-slate-700">{v.fuelType}</span>}
+              <div className="p-4 flex-1 flex flex-col">
+                <div className="font-semibold text-lg leading-tight mb-0.5 tracking-[-0.2px]">{v.model}</div>
+                <div className="text-[11px] text-[#C5A46E] uppercase tracking-[1px] mb-2">{v.category} · {v.fuelType || "연료"}</div>
+
+                {/* Badges only - no price */}
+                <div className="flex flex-wrap gap-1.5 mb-2">
+                  <span className="inline-block text-[10px] px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">{v.deliveryDays} 내</span>
+                  <span className="inline-block text-[10px] px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200">재고 {v.stock}대</span>
+                </div>
+
+                <div className="text-xs text-slate-600 mb-3 line-clamp-2 flex-1">
+                  {v.keyPoints && v.keyPoints.length > 0 ? v.keyPoints.slice(0, 2).join(" · ") : v.note || "상담으로 최종 조건 확인"}
+                </div>
+
+                <ConsultationCTA
+                  variant="outline"
+                  prefillVehicle={v.model}
+                />
+              </div>
             </div>
-
-            {v.note && <div className="text-sm text-slate-600 mb-4">{v.note}</div>}
-
-            <div className="mt-auto pt-4 border-t">
-              <ConsultationCTA variant="primary" prefillVehicle={v.model} />
-            </div>
-          </div>
-        ))}
+          );
+        })}
+        {filtered.length === 0 && (
+          <div className="col-span-full text-center py-10 text-slate-500">조건에 맞는 차량이 없습니다. 필터를 조정해 보세요.</div>
+        )}
       </div>
 
       <div className="mt-10 pt-6 border-t text-xs text-slate-500">
