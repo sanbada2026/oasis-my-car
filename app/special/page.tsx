@@ -6,7 +6,7 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 
 type BrandFilter = "전체" | "현대" | "기아";
 type CategoryFilter = "전체" | "승용" | "SUV" | "MPV";
-type FuelFilter = "전체" | "하이브리드" | "디젤" | "가솔린" | "전기";
+type FuelFilter = "전체" | "가솔린" | "하이브리드" | "LPI" | "EV" | "디젤";
 
 export default function SpecialPage() {
   const [search, setSearch] = useState("");
@@ -63,7 +63,7 @@ export default function SpecialPage() {
             </div>
             <div className="flex flex-wrap gap-1.5 items-center">
               <span className="text-xs text-slate-500 mr-1 w-10">연료</span>
-              {(["전체", "하이브리드", "디젤", "가솔린", "전기"] as FuelFilter[]).map((f) => (
+              {(["전체", "가솔린", "하이브리드", "LPI", "EV", "디젤"] as FuelFilter[]).map((f) => (
                 <button key={f} onClick={() => setFuel(f)} className={`px-3 py-1 rounded-full border text-xs transition ${fuel === f ? "bg-[#0F172A] text-white border-[#0F172A]" : "bg-white hover:bg-slate-50 border-slate-200"}`}>{f}</button>
               ))}
             </div>
