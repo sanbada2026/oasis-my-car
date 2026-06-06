@@ -8,18 +8,12 @@ export interface RocketVehicle {
   deliveryDays: string;
   stock: number;
   imagePlaceholder?: string;
-  // kept for backward compat with current pages (scannable short lists)
   keyPoints?: string[];
   note?: string;
 }
 
 // 로켓출고 차량 데이터 관리 방법 (엑셀 연동):
-// 매일 현대/기아 재고 엑셀 파일을 받아 curate(선별) 후 이 배열에 붙여넣기/수정하세요.
-// 필터: 브랜드(현대/기아), 차종(세단/SUV/MPV), 연료(하이브리드/디젤/가솔린/전기) + 검색만 지원 (정렬 항목은 제거됨).
-// brand: "현대" | "기아", fuelType: "하이브리드" | "디젤" | "가솔린" | "전기"
-// estMonthly: "월 XX만원", deliveryDays: "즉시" | "1~2일" | "3~5일" 등, stock: 숫자
-// imagePlaceholder: picsum 등 placeholder. 16대+ 유지, mix 모델로 고볼륨 scannable UI.
-// 이 파일만 수정 = 로켓 페이지 전체 반영. (sort 제거됨: 사용자가 복잡하니 제거 요청)
+// fuelType now supports: 가솔린, 하이브리드, LPI, EV, 디젤
 export const rocketVehicles: RocketVehicle[] = [
   {
     id: "rkt-001",
@@ -182,7 +176,7 @@ export const rocketVehicles: RocketVehicle[] = [
     model: "기아 EV6 롱레인지",
     brand: "기아",
     category: "전기",
-    fuelType: "전기",
+    fuelType: "EV",
     estMonthly: "월 68만원",
     deliveryDays: "3일",
     stock: 2,
@@ -195,7 +189,7 @@ export const rocketVehicles: RocketVehicle[] = [
     model: "현대 아이오닉 5 롱레인지",
     brand: "현대",
     category: "전기",
-    fuelType: "전기",
+    fuelType: "EV",
     estMonthly: "월 67만원",
     deliveryDays: "즉시",
     stock: 1,
