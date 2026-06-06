@@ -4,15 +4,26 @@ import ConsultationCTA from "@/components/ConsultationCTA";
 export default function AboutPage() {
   return (
     <div>
-      <section className="bg-[#0F172A] text-white py-20">
+      {/* Hero with user's background photo 20260606_182041.jpg - make it nice and premium */}
+      <section 
+        className="relative text-white py-24 md:py-28" 
+        style={{
+          backgroundImage: `linear-gradient(rgba(15,23,42,0.72), rgba(15,23,42,0.65)), url('/images/20260606_182041.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="text-[#C5A46E] text-sm tracking-[3px] mb-3">OUR STORY</div>
-          <h1 className="text-5xl md:text-6xl font-semibold tracking-[-1px]">10년의 경험, 한 사람의 진심</h1>
-          <p className="mt-4 text-2xl text-white/90">오아시스 마이카 대표 <span className="text-[#C5A46E] font-semibold">정한일</span>입니다.</p>
+          <h1 className="text-5xl md:text-6xl font-semibold tracking-[-1px] drop-shadow">10년의 경험, 한 사람의 진심</h1>
+          <p className="mt-4 text-2xl text-white/95">오아시스 마이카 대표 <span className="text-[#C5A46E] font-semibold">정한일</span>입니다.</p>
+          <p className="mt-6 max-w-2xl mx-auto text-white/80 text-lg">
+            실제 고객과 함께한 2,000대+ 출고 경험. AI가 아닌 현장 전문가의 진심이 담긴 컨설팅.
+          </p>
         </div>
       </section>
 
-      {/* Rich formatted story - important words bold + gold to avoid boring (per request #1) */}
+      {/* Rich formatted story */}
       <section className="max-w-4xl mx-auto px-6 py-16 text-lg leading-relaxed text-slate-700 whitespace-pre-line">
 오아시스 마이카는 <strong className="text-[#C5A46E]">10년 차</strong> 리스·렌트 전문가가 직접 운영하는 신차 장기렌트 및 오토리스 전문 기업입니다.
 
